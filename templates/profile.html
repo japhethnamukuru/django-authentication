@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	update profile
+{% endblock %}
+
+{% block content %}
+	<div class="row" style="background-color: #e6e6e6;">
+		<div class="col-md-2">
+			<div class="profile" style="margin-top: 4%; margin-left: 4%;">
+				{% if user.profile.profile_photo %}
+					<div>
+						<img src="{{ user.profile.profile_photo.url }}" height="150px" width="150px" style="border-radius: 100%" alt="profile image">
+						<div class="username">
+							<span class="dot"></span>			
+							{{ user.username }}
+						</div><br>
+						<div style="font-size: 12px; margin-left: 5%;">
+							<div>
+								<div>
+									Date Joined
+								</div>
+								{{ user.profile.date_joined }}
+							</div><br>
+							<div>
+								<div>
+									Last Login
+								</div>
+								{{ user.profile.last_login }}
+							</div>						
+						</div><br>
+						<div style="margin-left: 5%; color: #000;">
+							<a href="{% url 'accounts:password_change' %}">Change password</a>
+						</div>
+					</div>
+				{% else %}
+					<div>
+						<img src="{% static 'images/user.jpeg' %}" height="150px" width="150px" style="
+						border-radius: 100%" alt="profile photo">
+						<div class="username">
+						<span class="dot"></span>			
+							{{ user.username }}
+						</div><br>
+						<div style="font-size: 12px; margin-left: 5%;">
+						<div>
+							<div>
+								Date Joined
+							</div>
+							{{ user.profile.date_joined }}
+						</div><br>
+						<div>
+							<div>
+								Last Login
+							</div>
+							{{ user.profile.last_login }}
+						</div>						
+						</div><br>
+						<div style="margin-left: 5%; color: #000;">
+							<a href="{% url 'accounts:password_change' %}">Change password</a>
+						</div>
+						<div style="padding-left: 4%;">
+						<p>No profile picture set</p>
+						</div>
+					</div>
+				{% endif %}		
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="form-data" style="margin-top: 4%;">
+				<div>
+					<div>
+					<i class="fas fa-user-edit"></i>
+					</div>
+				</div>
+				<form method="POST" enctype="multipart/form-data" class="email-submit">
+					{% csrf_token %}
+					<div class="title">
+						<h5>Update profile</h5>
+						<p>update your profile information</p>
+					</div>
+					<div>
+						Change profile picture:
+					</div><br>	
+					<div>						
+						{{ profile_form.profile_photo }}
+					</div><br>			
+					<div class="form-row">
+				      	<div class="form-group col-md-6 mb-0">
+				        	{{ user_form.first_name|as_crispy_field }}
+				      	</div>
+				      	<div class="form-group col-md-6 mb-0">
+				        	{{ user_form.last_name|as_crispy_field }}
+				      	</div>
+				    </div>			    
+				    <div class="form-row">
+				      	<div class="form-group col-md-12 mb-0">
+				        	{{ user_form.email|as_crispy_field }}
+				      	</div>
+				  	</div>
+				    <div class="form-row">
+					    <div class="form-group col-md-6 mb-0">
+					        {{ profile_form.date_of_birth|as_crispy_field }}
+					    </div>
+				      	<div class="form-group col-md-6 mb-0">
+				        	{{ profile_form.id_number|as_crispy_field }}
+				     	</div>
+				  	</div>
+				  	<div class="form-row">
+				  		<div class="form-group col-md-12 mb-0">
+				  			{{ profile_form.location|as_crispy_field }}
+				  		</div>
+				  	</div>			    		    
+					<button class="btn btn-outline-info" type="submit">Update</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-2">
+			
+		</div>
+	</div>
+{% endblock %}

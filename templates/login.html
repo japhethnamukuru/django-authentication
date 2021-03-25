@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	Login
+{% endblock %}
+
+{% block content %}
+	<div class="row" style="background-color: #e6e6e6;">
+		<div class="col-md-2">
+			
+		</div>
+		<div class="col-md-8">
+			<div class="login" style="background-color: #fff;">
+				<div class="user">
+					<i class="fas fa-sign-in-alt"></i>
+				</div>
+				<div class="title">
+					<h1>Login</h1>
+				</div>
+				<div class="form-msg">
+					{% if form.errors %}
+						<p>
+							Your username and password didn't match.
+							Please try again.
+						</p>
+					{% else %}
+					<p>Please, fill out the following form fields appropriately:</p>
+					{% endif %}
+				</div>
+
+				<div class="login-form">
+					<form action="{% url 'accounts:login' %}" method="post" class="signin-form">
+						{{ form|crispy }}
+						{% csrf_token %}
+						<input type="hidden" name="next" value="{{ next }}"/>
+						<p>
+						<button class="btn btn-outline-info" type="submit">signin</button> 
+						</p>
+						<p>Forgotten passoword? Click <a href="{% url 'accounts:password_reset' %}" style="color: #990099;">here.</a></p>
+						<p>Missing an Account? Click <a href="{% url 'accounts:signup' %}" style="color: #990099;">here.</a></p>
+					</form>
+				</div>
+			</div>		
+		</div>
+		<div class="col-md-2">
+			
+		</div>		
+	</div>	
+{% endblock %}
