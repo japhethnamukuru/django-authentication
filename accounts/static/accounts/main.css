@@ -1,0 +1,198 @@
+/* default base css */
+*{
+	margin-top: 0;
+	
+}
+body {
+	margin: auto;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+}
+.personal-links {
+	background-color: transparent;
+	font-size: 12px;
+}
+
+.nav-index {
+	background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/car1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 600px;
+	width: 100%;
+}
+
+.base-links {
+	background-color: #1a001a;
+}
+
+i {
+	padding-left: 15%;
+}
+.fa-facebook-f {
+	color: dodgerblue;
+}
+.fa-linkedin-in {
+	color: white;
+}
+.fa-github {
+	color: #ffffff;
+}
+.fa-phone {
+	color: green;
+}
+.navbar-brand {	
+	border : 2px solid grey;
+	border-radius: 25px;
+	border-width: thin;
+	padding-right: 15px;
+	padding-left: 15px;
+	font-family: cursive;
+	font-weight: bold;
+	color: #990099;
+}
+.nav-item {
+	margin-left: 15%;
+}
+
+.nav-link {
+	color: #fff;
+}
+.navbar-nav {
+
+}
+
+/*navbar css */
+.navbar-light {
+	transition:500ms ease;
+	background:transparent;
+}
+
+.navbar-light.scrolled {
+  	background-color: #1a001a;
+}
+
+.search-form {
+	margin-left: 35%;
+	padding-left: 0%;
+}
+
+.user {
+	padding-left: 2%;
+	color: grey;
+	padding-right: 0%;
+}
+
+.start {
+	float: right;
+
+}
+
+.social .fab {
+	color: grey;
+    font-size: 22px;
+    padding: 10px 15px;
+    background: #3c3c3c;
+}
+/* // default base.html css */
+
+/*index.html css */
+
+a:link {
+	text-decoration: none;
+}
+
+.brand-description {
+	margin-left: 10%;
+	font-family: cursive;
+	font-weight: bolder;
+	font-size: 1.5em;
+	margin-top: 3%;	
+}
+
+#brand-description {
+	margin-left: 2%;
+}
+
+.header-content {
+	/*background: url('../images/bg1.jpg');*/
+	margin: 0%;
+	background-color: transparent;
+    background-blend-mode: lighten;
+}
+.fa-cars {
+	color: #000000;
+}
+
+/*car_index.html css */
+
+.card {
+	margin-top: 3%;	
+}
+
+.checked {
+	color: orange;
+}
+
+.car-data {
+	margin-left: 0%;
+	border: border: 2px solid dodgerblue;
+}
+
+.main-content {
+	color: grey;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: thin;
+	padding-top: 5%;
+}
+
+.signup-btn {
+	border: 2px solid #990099;
+	border-radius: 25px;
+	background-color: transparent;
+}
+
+.about {
+	text-align: center;
+}
+
+ .car-brands {
+ 	border: 1px solid;
+ 	border-color:  #1a001a;
+ 	border-radius: 5px;
+ 	margin-bottom: 30px; 
+ 	margin-top: 1%;
+ 	padding-top: 5%;
+ 	background-color:  #1a001a;
+ }
+
+ul {
+	list-style-type: none;
+}
+
+.brand-links {
+	color: grey;
+}
+
+.pagination {	
+	justify-content: center;
+	align-content: center;	
+}
+
+.filter-form {
+	background-color: transparent;
+	color: grey;
+}
+
+.select-btn {
+	border-radius: 25px;
+	border: 1px solid grey;
+	background-color: transparent;
+	color: grey;
+}
+
+.popular-brands {
+	font-family: 'Roboto',sans-serif;
+	color: grey;
+}
